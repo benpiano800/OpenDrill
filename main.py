@@ -131,7 +131,7 @@ canvas = Canvas(tk, width=1280, height=720, highlightthickness=0)
 canvas.pack()
 def save(filename):
     pass
-testbg = PhotoImage(file="/home/ben/Programs/OpenDrill/Backgrounds/Test.gif")
+testbg = PhotoImage(file="Backgrounds/Test.gif")
 canvas.create_image(1280, 720, anchor='nw', image=testbg)
 while True:
     tk.update_idletasks()
