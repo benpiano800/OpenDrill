@@ -1,9 +1,9 @@
 # Main Source Code File For OpenDrill
-# Version 0.1.0
+# Version 0.2.0
 from tkinter import *
-from PyQt5 import QtWidgets, uic
 import time
 import sys
+import pickle
 class project():
     def __init__(self, name):
         pass
@@ -16,7 +16,7 @@ class project():
             pass
         elif filetype == "xlsx":
             pass
-        elif filetype =="ods":
+        elif filetype == "ods":
             pass
     def export_drillchart(self, filetype):
         if filetype == "pdf":
@@ -25,12 +25,14 @@ class project():
             pass
         elif filetype == "odp":
             pass
-    def export_video(self, filetype):
+    def export_video(self, filetype, codec):
         if filetype == "mp4":
             pass
         elif filetype == "webm":
             pass
         elif filetype == "mkv":
+            pass
+        if codec == "H264":
             pass
 class show():
     def __init__(self, movements):
@@ -41,7 +43,7 @@ class movement():
     def playmusic(self):
         pass
 class drillset():
-    def __init__(self, counts):
+    def __init__(self, counts, subsets):
         pass
 class marcher():
     def __init__(self, role, drillnum):
@@ -51,7 +53,7 @@ class marcher():
             pass
         elif self.role == "BassDrum":
             pass
-        elif self.role =="FlubDrum":
+        elif self.role == "FlubDrum":
             pass
         elif self.role == "Cymbals":
             pass
@@ -120,7 +122,18 @@ class field():
             pass
         else:
             raise Exception("INVALID")
-app = QtWidgets.QApplication(sys.argv)
-window = uic.loadUi("MainWindow.ui")
-window.show()
-app.exec()
+        def draw(self):
+            pass
+tk = Tk()
+tk.title('OpenDrill (Alpha)')
+tk.resizable(1, 1)
+canvas = Canvas(tk, width=1280, height=720, highlightthickness=0)
+canvas.pack()
+def save(filename):
+    pass
+testbg = PhotoImage(file="/home/ben/Programs/OpenDrill/Backgrounds/Test.gif")
+canvas.create_image(1280, 720, anchor='nw', image=testbg)
+while True:
+    tk.update_idletasks()
+    tk.update()
+    time.sleep(0.001)
